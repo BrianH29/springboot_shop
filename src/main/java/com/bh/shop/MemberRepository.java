@@ -1,5 +1,6 @@
 package com.bh.shop;
 
+import com.bh.shop.domain.Member;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;

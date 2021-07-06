@@ -1,6 +1,7 @@
 package com.bh.shop;
 
 
+import com.bh.shop.domain.Member;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
