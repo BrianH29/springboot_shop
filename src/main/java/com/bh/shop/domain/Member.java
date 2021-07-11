@@ -7,12 +7,11 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity
 @Getter
 @Setter
+@Entity
 
 public class Member {
-
     @Id @GeneratedValue
     @Column(name = "member_id")
     private Long id;
@@ -24,4 +23,5 @@ public class Member {
 
     @OneToMany(mappedBy = "member")
     private List<Order> orders = new ArrayList<>();
+
 }

@@ -1,21 +1,18 @@
 package com.bh.shop.domain;
 
-import jdk.jfr.Enabled;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
 
-@Enabled
-@Getter
-@Setter
+@Entity
+@Getter @Setter
 public class Delivery {
-
     @Id @GeneratedValue
     @Column(name = "delivery_id")
     private Long id;
 
-    @OneToOne
+    @OneToOne(fetch = FetchType.LAZY)
     private Order order;
 
     @Embedded

@@ -1,4 +1,4 @@
-package com.bh.shop.resposttory;
+package com.bh.shop.repository;
 
 import com.bh.shop.domain.Member;
 import org.springframework.stereotype.Repository;
@@ -9,7 +9,7 @@ import java.util.List;
 
 @Repository
 public class MemberRepository {
-    //jpa 사용을 위해 제공하는 어노테이션 사용. ComponentScan에 의해 빈으로 등록
+
     @PersistenceContext
     private EntityManager em;
 
@@ -22,12 +22,12 @@ public class MemberRepository {
     }
 
     public List<Member> findAll(){
-        return em.createQuery("select m from Member m", Member.class).getResultList();
+       return em.createQuery("select m from Member m", Member.class).getResultList();
     }
 
     public List<Member> findByName(String name){
-        return em.createQuery("select m from Member m where m.name =:name", Member.class)
-                .setParameter("name",name)
+        return em.createQuery("select m from Member m where m.name =:name",Member.class)
+                .setParameter("name", name)
                 .getResultList();
     }
 }
